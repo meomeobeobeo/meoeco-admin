@@ -1,0 +1,143 @@
+{
+    "filmManagers":{
+
+        "columns" :[
+            {
+                "label" : "Film ID",
+                "field" : "filmInfor" ,
+                "type" : "object"   
+            },
+            {
+                "label" : "watch Time",
+                "field" : "watchTime" ,
+                "type" : "string"   
+
+            },
+            {
+                "label" : "watchDate",
+                "field" : "watchDate" ,
+                "type" : "dateTime"
+
+            },
+            {
+                "label" : "Theater address",
+                "field" : "theaterAddress" ,
+                "type" : "string"
+            },
+            {
+                "label" : "Theater number",
+                "field" : "theaterNumber" ,
+                "type" : "string"
+            }
+            
+        ],
+        "apiName":{
+            "getAll":"getFilmManagerInformation",
+            "getDetails":"",
+            "delete":"deleteFilmManagerInformation",
+            "update":"updateFilmManagerInformation"
+        
+        },
+        "formFormatName" : "filmManager"
+    },
+    "filmInformation":{
+
+        "columns" :[
+            {
+                "label" : "Name",
+                "field" : "name" ,
+                "type" : "string"
+            },
+            {
+                "label" : "Trailer",
+                "field" : "trailer" ,
+                "type" : "string"
+            },
+            {
+                "label" : "Duration",
+                "field" : "duration" ,
+                "type" : "time"
+
+            },
+            {
+                "label" : "Author",
+                "field" : "author" ,
+                "type" : "string"
+
+            },
+            {
+                "label" : "Img Banner URL",
+                "field" : "imgBanner",
+                "type" : "string"
+
+            },
+            {
+                "label" : "Actors",
+                "field" : "actors", 
+                "type" : "array"
+            },
+            {
+                "label" : "Name",
+                "field" : "name" ,
+                "type" : "string"
+            },
+            {
+                "label" : "startTime",
+                "field" : "startTime" ,
+                "type" : "dateTime"
+            },
+            {
+                "label" : "Language",
+                "field" : "language" ,
+                "type" : "string"
+            },
+            {
+                "label" : "Rated",
+                "field" : "rated" ,
+                "type" : "string"
+            },
+            {
+                "label" : "Start Time",
+                "field" : "startTime" ,
+                "type" : "string"
+            },
+            {
+                "label" : "Description",
+                "field" : "description" ,
+                "type" : "string"
+            }
+        ],
+        "apiName":{
+            "getAll":"getFilmInformation",
+            "getDetails":"",
+            "delete":"deleteFilmInformation",
+            "update":"updateFilmInformation"
+        
+        },
+        "formFormatName" : "filmInformations"
+    },
+    "foodInformation":{
+
+        "columns" :[
+            {
+                "label" : "Name Food",
+                "field" : "name" ,
+                "type" : "string"
+            },
+            {
+                "label" : "Cost",
+                "field" : "cost" ,
+                "type" : "string"
+            }
+           
+        ],
+        "apiName":{
+            "getAll":"getFoodInformation",
+            "getDetails":"",
+            "delete":"deleteFoodInformation",
+            "update":"updateFoodInformation"
+        
+        },
+        "formFormatName" : "foodInformations"
+    }
+}
