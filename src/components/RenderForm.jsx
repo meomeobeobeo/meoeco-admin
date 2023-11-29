@@ -5,25 +5,16 @@ import * as Widget from "../components/Widget";
 import * as api from "../api/request";
 import { toast } from "react-toastify";
 
-const RenderForm = ({ formFormat, defaultData, mode , updateInfor }) => {
-
-
-  
+const RenderForm = ({ formFormat, defaultData, mode, updateInfor }) => {
   const [formData, setFormData] = useState({});
 
-
- 
-  
-  useEffect(()=>{
-   if(defaultData){
-    setFormData(defaultData)
-   }
-   else{
-    setFormData({})
-   }
-
-  },[defaultData])
-  
+  useEffect(() => {
+    if (defaultData) {
+      setFormData(defaultData);
+    } else {
+      setFormData({});
+    }
+  }, [defaultData]);
 
   const handleInputChange = (field, value) => {
     setFormData((prevFormData) => ({ ...prevFormData, [field]: value }));
@@ -35,7 +26,6 @@ const RenderForm = ({ formFormat, defaultData, mode , updateInfor }) => {
         success: "Create success 👌",
         error: "Have some error 🤯",
       });
-      
     } catch (error) {
       console.error(error);
     }
@@ -53,7 +43,7 @@ const RenderForm = ({ formFormat, defaultData, mode , updateInfor }) => {
               <Col key={index} className="flex flex-col gap-2 " span={12}>
                 <Typography className="font-semibold">{form.label}</Typography>
                 <Input
-                placeholder={form.placeholder || "please enter data"} 
+                  placeholder={form.placeholder || "please enter data"}
                   value={formData[form.field] || ""}
                   onChange={(e) =>
                     handleInputChange(form.field, e.target.value)
@@ -74,13 +64,15 @@ const RenderForm = ({ formFormat, defaultData, mode , updateInfor }) => {
                 <Divider />
               </Col>
             );
-          } else if (form.type === "selectSearch") {  
+          } else if (form.type === "selectSearch") {
             return (
               <Col key={index} className="flex flex-col gap-2 " span={12}>
                 <Typography className="font-semibold">{form.label}</Typography>
                 <Widget.SelectSearch
                   value={formData[form.field] || ""}
-                  onChange={(value) => handleInputChange(form.field, value.value)}
+                  onChange={(value) =>
+                    handleInputChange(form.field, value.value)
+                  }
                   apiNameSetData={form.apiNameSetData}
                 />
                 <Divider />
@@ -175,13 +167,11 @@ const RenderForm = ({ formFormat, defaultData, mode , updateInfor }) => {
         <div className="flex flex-row justify-between items-center mt-6">
           <div
             onClick={() => {
-              if(updateInfor){
-                updateInfor({filmId : formData.id , formData : formData})
+              if (updateInfor) {
+                updateInfor({ filmId: formData.id, formData: formData });
+              } else {
+                console.error("Not have fuction matching");
               }
-              else{
-                console.error("Not have fuction matching")
-              }
-
             }}
             className="bg-blue-400 py-3 px-4 text-center flex justify-center items-center font-semibold text-slate-100 hover:text-slate-100 hover:bg-blue-500 rounded-xl cursor-pointer"
           >

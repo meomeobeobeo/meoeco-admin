@@ -17,8 +17,16 @@ import FeedBack from "../pages/FeedBack";
 import DashBoard from "../pages/DashBoard";
 import Food from "../pages/Food";
 const { Header, Content, Footer, Sider } = Layout;
-import { useLocation } from 'react-router-dom';
-
+import { useLocation } from "react-router-dom";
+import Country from "../pages/Country/Country";
+import ProductCategory from "../pages/ProductCategory";
+import PromotionCategory from "../pages/PromotionCategory";
+import Promotion from "../pages/Promotion";
+import Variation from "../pages/Variation";
+import VariationOption from "../pages/VariationOption";
+import ProductItems from "../pages/ProductItems";
+import Products from "../pages/Product";
+import PaymentType from "../pages/PaymentType";
 
 const TheContent = () => {
   const {
@@ -26,8 +34,6 @@ const TheContent = () => {
   } = theme.useToken();
   const location = useLocation();
   const currentPath = location.pathname.substring(1);
-  
-
 
   return (
     <Layout className="site-layout">
@@ -59,18 +65,19 @@ const TheContent = () => {
         >
           <Routes>
             <Route path="/dashboard" element={<DashBoard />} />
-            <Route path="/filmInfor" element={<FilmInformation />} />
-            <Route path="/filmManager" element={<FilmManager />} />
-            <Route path="/tickets" element={<Tickets />} />
+
             <Route path="/bills" element={<Bill />} />
             <Route path="/feedback" element={<FeedBack />} />
-            <Route path="/food" element={<Food />} />
 
-
-
-
-
-
+            <Route path="/country" element={<Country />} />
+            <Route path="/product-category" element={<ProductCategory />} />
+            <Route path="/promotion-category" element={<PromotionCategory />} />
+            <Route path="/promotion" element={<Promotion />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/variation" element={<Variation />} />
+            <Route path="/variation-option" element={<VariationOption />} />
+            <Route path="/product-items" element={<ProductItems />} />
+            <Route path="/payment-type" element={<PaymentType />} />
           </Routes>
         </div>
       </Content>

@@ -18,7 +18,7 @@ const RenderTable = ({ tableFormat }) => {
 
   useEffect(() => {
     fetchData();
-    setDataModal({})
+    setDataModal({});
   }, []);
 
   const fetchData = async () => {
@@ -48,9 +48,12 @@ const RenderTable = ({ tableFormat }) => {
       toast.error("Have some error when delete 🤯");
     }
   };
-  const updateInfor = async ({ filmId , formData }) => {
+  const updateInfor = async ({ filmId, formData }) => {
     try {
-      await api[tableFormat?.apiName?.update]({ id: filmId , formData :formData  });
+      await api[tableFormat?.apiName?.update]({
+        id: filmId,
+        formData: formData,
+      });
       toast.success("update success 👌");
       fetchData();
     } catch (error) {
@@ -65,7 +68,7 @@ const RenderTable = ({ tableFormat }) => {
         dataIndex: value?.field,
         key: index,
         render: (text) => (
-          <Tag  color="success">{`${text?.hours} giờ  ${text?.minutes} phút`}</Tag>
+          <Tag color="success">{`${text?.hours} giờ  ${text?.minutes} phút`}</Tag>
         ),
       };
     } else if (value.type === "dateTime") {
@@ -74,17 +77,12 @@ const RenderTable = ({ tableFormat }) => {
         dataIndex: value?.field,
         key: index,
         render: (text) => {
-        
           const dateStr = text;
           const formattedDate = moment(dateStr, "YYYY/MM/DD").format(
             "MMMM Do YYYY"
           );
-        
-          return (
-            <Tag color="geekblue">
-            {formattedDate}
-          </Tag>
-          )
+
+          return <Tag color="geekblue">{formattedDate}</Tag>;
         },
       };
     } else if (value.type === "array") {
@@ -93,26 +91,23 @@ const RenderTable = ({ tableFormat }) => {
         dataIndex: value?.field,
         key: index,
         render: (text) => {
-          let components = text.map((value , index) => {
-            return <Tag key={index} color="cyan-inverse">{value}</Tag>;
+          let components = text.map((value, index) => {
+            return (
+              <Tag key={index} color="cyan-inverse">
+                {value}
+              </Tag>
+            );
           });
 
           return <div className="flex flex-col gap-1">{components}</div>;
         },
       };
-    }
-    else if (value.type === "object") {
-
-
-      
-
-
+    } else if (value.type === "object") {
       return {
         title: value?.label,
         dataIndex: value?.field,
         key: index,
         render: (text) => {
-
           const keyValuePairs = [];
           for (let key in text) {
             const value = text[key];
@@ -120,10 +115,12 @@ const RenderTable = ({ tableFormat }) => {
             keyValuePairs.push(pairString);
           }
 
-
-
-          let components = keyValuePairs.map((value , index) => {
-            return <Tag key={index} color="cyan">{value}</Tag>;
+          let components = keyValuePairs.map((value, index) => {
+            return (
+              <Tag key={index} color="cyan">
+                {value}
+              </Tag>
+            );
           });
 
           return <div className="flex flex-col gap-1">{components}</div>;
@@ -134,7 +131,9 @@ const RenderTable = ({ tableFormat }) => {
       title: value?.label,
       dataIndex: value?.field,
       key: index,
-      render: (text) => <Typography className="max-h-24 overflow-y-scroll">{text}</Typography>,
+      render: (text) => (
+        <Typography className="max-h-24 overflow-y-scroll">{text}</Typography>
+      ),
     };
   });
   columns.push({
@@ -148,9 +147,6 @@ const RenderTable = ({ tableFormat }) => {
       };
 
       const handleDeleteFilm = () => {
-
-
-        
         deleteInfor({ filmId: text.id });
       };
 
@@ -179,7 +175,7 @@ const RenderTable = ({ tableFormat }) => {
       <DynamicModal
         dataShow={dataModal}
         formFomat={formFormat}
-        updateInfor = {updateInfor}
+        updateInfor={updateInfor}
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
       />

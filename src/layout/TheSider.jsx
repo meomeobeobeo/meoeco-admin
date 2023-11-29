@@ -9,13 +9,13 @@ import {
 } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu, theme } from "antd";
 import { useNavigate } from "react-router-dom";
-import {IoFastFood} from 'react-icons/io5'
-import {BsFillTicketPerforatedFill } from 'react-icons/bs'
-import {FaMoneyBill} from 'react-icons/fa'
-import {FcFeedback} from 'react-icons/fc'
-import {MdDashboard,MdManageHistory} from 'react-icons/md'
-import {GrUserManager} from 'react-icons/gr'
-import {BiFilm} from 'react-icons/bi'
+import { IoFastFood } from "react-icons/io5";
+import { BsFillTicketPerforatedFill } from "react-icons/bs";
+import { FaMoneyBill } from "react-icons/fa";
+import { FcFeedback } from "react-icons/fc";
+import { MdDashboard, MdManageHistory } from "react-icons/md";
+import { GrUserManager } from "react-icons/gr";
+import { BiFilm } from "react-icons/bi";
 const { Header, Content, Footer, Sider } = Layout;
 
 function getItem(label, key, icon, children) {
@@ -28,34 +28,39 @@ function getItem(label, key, icon, children) {
 }
 
 const itemNavs = [
-  getItem('Dashboard', "/dashboard" , <MdDashboard/>),
-  getItem('Films','sub1',<DesktopOutlined/>,[
-    getItem('Film information','/filmInfor',<BiFilm/>),
-    getItem('Film manager','/filmManager',<MdManageHistory  />),
-  ]),
-  getItem('Food','/food',<IoFastFood/>),
-  getItem('Tickets manager','/tickets',<BsFillTicketPerforatedFill/>),
-  // getItem('Bill manager','/bills' , <FaMoneyBill/>),
-  getItem('FeedBack manager','/feedback', <FcFeedback/>)
-]
+  getItem("Dashboard", "/dashboard", <MdDashboard />),
+  getItem("Country", "/country", <FcFeedback />),
 
+  getItem("Product manager", "sub1", <DesktopOutlined />, [
+    getItem("Product category", "/product-category", <FcFeedback />),
+    getItem("Products", "/products", <FcFeedback />),
+    getItem("Product Items", "/product-items", <FcFeedback />),
+  ]),
+  getItem("Product variation", "sub2", <DesktopOutlined />, [
+    getItem("Variation Product", "/variation", <FcFeedback />),
+    getItem("Variation option Product", "/variation-option", <FcFeedback />),
+  ]),
+  getItem("Promotion", "sub3", <DesktopOutlined />, [
+    getItem("Promotion", "/promotion", <FcFeedback />),
+    getItem("Promotion category", "/promotion-category", <FcFeedback />),
+  ]),
+  getItem("Payment type", "/payment-type", <FcFeedback />),
+];
 
 const TheSider = () => {
-    const [collapsed, setCollapsed] = useState(false);
-    const navigate = useNavigate()
-    const onClickMenu = (e)=>{
-      navigate(e.key)
-    }
+  const [collapsed, setCollapsed] = useState(false);
+  const navigate = useNavigate();
+  const onClickMenu = (e) => {
+    navigate(e.key);
+  };
   return (
     <Sider
       collapsible
       collapsed={collapsed}
       onCollapse={(value) => setCollapsed(value)}
     >
-      <div
-       className="w-full flex justify-center items-center h-32 font-semibold text-lg text-slate-100"
-      >
-        M-ADMIN
+      <div className="w-full flex justify-center items-center h-32 font-semibold text-lg text-slate-100">
+        MEOECO-ADMIN
       </div>
       <Menu
         theme="dark"

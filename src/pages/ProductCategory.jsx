@@ -5,7 +5,7 @@ import TABLES from "../config/table.json";
 import { Tabs } from "antd";
 import TabPane from "antd/es/tabs/TabPane";
 import RenderTable from "../components/RenderTable";
-const Food = () => {
+const ProductCategory = () => {
   const [activeTab, setActiveTab] = useState("create-infor");
 
   const handleTabChange = (key) => {
@@ -14,16 +14,16 @@ const Food = () => {
   return (
     <div className="w-full">
       <Tabs className="w-full" activeKey={activeTab} onChange={handleTabChange}>
-        <TabPane tab="Create food information" key="create-infor">
-          <RenderForm mode={"create"} formFormat={FORMS.foodInformations} />
+        <TabPane tab="Create product category information" key="create-infor">
+          <RenderForm mode={"create"} formFormat={FORMS.productCategoryInformation} />
         </TabPane>
-        <TabPane tab="Table food list" key="table-infor">
+        <TabPane tab="Table product-category list" key="table-infor">
           {/* <RenderTable  tableFormat={TABLES.test} /> */}
-          <RenderTable tableFormat={TABLES.foodInformation} />
+          <RenderTable tableFormat={TABLES.productCategoryInformation} />
         </TabPane>
       </Tabs>
     </div>
   );
 };
 
-export default Food;
+export default ProductCategory;

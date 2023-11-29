@@ -1,143 +1,240 @@
 {
-    "filmManagers":{
-
-        "columns" :[
-            {
-                "label" : "Film ID",
-                "field" : "filmInfor" ,
-                "type" : "object"   
-            },
-            {
-                "label" : "watch Time",
-                "field" : "watchTime" ,
-                "type" : "string"   
-
-            },
-            {
-                "label" : "watchDate",
-                "field" : "watchDate" ,
-                "type" : "dateTime"
-
-            },
-            {
-                "label" : "Theater address",
-                "field" : "theaterAddress" ,
-                "type" : "string"
-            },
-            {
-                "label" : "Theater number",
-                "field" : "theaterNumber" ,
-                "type" : "string"
-            }
-            
-        ],
-        "apiName":{
-            "getAll":"getFilmManagerInformation",
-            "getDetails":"",
-            "delete":"deleteFilmManagerInformation",
-            "update":"updateFilmManagerInformation"
-        
-        },
-        "formFormatName" : "filmManager"
+  
+  "CountryInformation": {
+    "columns": [
+      {
+        "label": "Name country",
+        "field": "country_name",
+        "type": "string"
+      }
+    ],
+    "apiName": {
+      "getAll": "getFoodInformation",
+      "getDetails": "",
+      "delete": "deleteFoodInformation",
+      "update": "updateFoodInformation"
     },
-    "filmInformation":{
-
-        "columns" :[
-            {
-                "label" : "Name",
-                "field" : "name" ,
-                "type" : "string"
-            },
-            {
-                "label" : "Trailer",
-                "field" : "trailer" ,
-                "type" : "string"
-            },
-            {
-                "label" : "Duration",
-                "field" : "duration" ,
-                "type" : "time"
-
-            },
-            {
-                "label" : "Author",
-                "field" : "author" ,
-                "type" : "string"
-
-            },
-            {
-                "label" : "Img Banner URL",
-                "field" : "imgBanner",
-                "type" : "string"
-
-            },
-            {
-                "label" : "Actors",
-                "field" : "actors", 
-                "type" : "array"
-            },
-            {
-                "label" : "Name",
-                "field" : "name" ,
-                "type" : "string"
-            },
-            {
-                "label" : "startTime",
-                "field" : "startTime" ,
-                "type" : "dateTime"
-            },
-            {
-                "label" : "Language",
-                "field" : "language" ,
-                "type" : "string"
-            },
-            {
-                "label" : "Rated",
-                "field" : "rated" ,
-                "type" : "string"
-            },
-            {
-                "label" : "Start Time",
-                "field" : "startTime" ,
-                "type" : "string"
-            },
-            {
-                "label" : "Description",
-                "field" : "description" ,
-                "type" : "string"
-            }
-        ],
-        "apiName":{
-            "getAll":"getFilmInformation",
-            "getDetails":"",
-            "delete":"deleteFilmInformation",
-            "update":"updateFilmInformation"
-        
-        },
-        "formFormatName" : "filmInformations"
+    "formFormatName": "countryInformation"
+  },
+  "productCategoryInformation": {
+    "columns": [
+      {
+        "label": "Name category",
+        "field": "category_name",
+        "type": "string"
+      },
+      {
+        "label": "Parent category id",
+        "field": "parent_category_id",
+        "type": "object"
+      }
+    ],
+    "apiName": {
+      "getAll": "getFoodInformation",
+      "getDetails": "",
+      "delete": "deleteFoodInformation",
+      "update": "updateFoodInformation"
     },
-    "foodInformation":{
-
-        "columns" :[
-            {
-                "label" : "Name Food",
-                "field" : "name" ,
-                "type" : "string"
-            },
-            {
-                "label" : "Cost",
-                "field" : "cost" ,
-                "type" : "string"
-            }
-           
-        ],
-        "apiName":{
-            "getAll":"getFoodInformation",
-            "getDetails":"",
-            "delete":"deleteFoodInformation",
-            "update":"updateFoodInformation"
-        
+    "formFormatName": "countryInformation"
+  },
+  "promotionInformation": {
+    "columns": [
+      {
+        "label": "Name",
+        "field": "name",
+        "type": "string"
+      },
+      {
+        "label": "Description",
+        "field": "description",
+        "type": "string"
+      },
+      {
+        "label": "Discount rate",
+        "field": "discount_rate",
+        "type": "string"
+      },
+      {
+        "label": "Start date",
+        "field": "start_date",
+        "type": "dateTime"
+      },
+      {
+        "label": "End date",
+        "field": "end_date",
+        "type": "dateTime"
+      }
+    ],
+    "apiName": {
+      "getAll": "getFoodInformation",
+      "getDetails": "",
+      "delete": "deleteFoodInformation",
+      "update": "updateFoodInformation"
+    },
+    "formFormatName": "promotionInformation"
+  },
+  "promotionCategoryInformation": {
+    "columns": [
+      {
+        "label": "Promotion id",
+        "field": "promotion_id",
+        "type": "string"
+      },
+      {
+        "label": "Category id",
+        "field": "category_id",
+        "type": "object"
+      }
+    ],
+    "apiName": {
+      "getAll": "getFoodInformation",
+      "getDetails": "",
+      "delete": "deleteFoodInformation",
+      "update": "updateFoodInformation"
+    },
+    "formFormatName": "promotionCategoryInformation"
+  },
+  "productInformation": {
+    "columns": [
+      {
+        "label": "Category id",
+        "field": "category_id",
+        "type": "object"
+      },
+      {
+        "label": "Name product",
+        "field": "name",
+        "type": "string"
+      },
+      {
+        "label": "Description",
+        "field": "description",
+        "type": "string"
+      },
+      {
+        "label": "Product image",
+        "field": "product_image",
+        "type": "string"
+      }
+    ],
+    "apiName": {
+      "getAll": "getFoodInformation",
+      "getDetails": "",
+      "delete": "deleteFoodInformation",
+      "update": "updateFoodInformation"
+    },
+    "formFormatName": "promotionCategoryInformation"
+  },
+  "variationInformation": {
+    "columns": [
+      {
+        "label": "Category id",
+        "field": "category_id",
+        "type": "object"
+      },
+      {
+        "label": "Name",
+        "field": "name",
+        "type": "string"
+      }
+    ],
+    "apiName": {
+      "getAll": "getFoodInformation",
+      "getDetails": "",
+      "delete": "deleteFoodInformation",
+      "update": "updateFoodInformation"
+    },
+    "formFormatName": "variationInformation"
+  },
+  "variationOptionInformation": {
+    "columns": [
+      {
+        "label": "Varation id",
+        "field": "variation_id",
+        "type": "object"
+      },
+      {
+        "label": "Value",
+        "field": "value",
+        "type": "string"
+      }
+    ],
+    "apiName": {
+      "getAll": "getFoodInformation",
+      "getDetails": "",
+      "delete": "deleteFoodInformation",
+      "update": "updateFoodInformation"
+    },
+    "formFormatName": "variationOptionInformation"
+  },
+  "productItemsInformation": {
+    "columns": [
+      {
+        "label": "Product id",
+        "field": "product_id",
+        "type": "string"
+      },
+      {
+        "label": "SKU",
+        "field": "SKU",
+        "type": "string"
+      },
+      {
+        "label": "Quantity in stock",
+        "field": "qty_in_stock",
+        "type": "string"
+      },
+      {
+        "label": "Product image",
+        "field": "product_image",
+        "type": "string"
+      }
+    
+    ],
+    "apiName": {
+      "getAll": "getFoodInformation",
+      "getDetails": "",
+      "delete": "deleteFoodInformation",
+      "update": "updateFoodInformation"
+    },
+    "formFormatName": "productItemsInformation"
+  },
+  "productConfigurationInformation":{
+    "columns": [
+        {
+          "label": "Product item id",
+          "field": "product_item_id",
+          "type": "string"
         },
-        "formFormatName" : "foodInformations"
-    }
+        {
+          "label": "Variation option id",
+          "field": "variation_option_id",
+          "type": "string"
+        }
+      ],
+      "apiName": {
+        "getAll": "getFoodInformation",
+        "getDetails": "",
+        "delete": "deleteFoodInformation",
+        "update": "updateFoodInformation"
+      },
+      "formFormatName": "productConfigurationInformation"
+    
+  },
+  "paymentType" : {
+    "columns": [
+        {
+          "label": "Payment type",
+          "field": "value",
+          "type": "string"
+        }
+      ],
+      "apiName": {
+        "getAll": "getFoodInformation",
+        "getDetails": "",
+        "delete": "deleteFoodInformation",
+        "update": "updateFoodInformation"
+      },
+      "formFormatName": "paymentType"
+  }
 }

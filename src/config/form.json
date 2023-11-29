@@ -1,294 +1,308 @@
 {
-  "filmInformations": {
-    "schema":[
-        {
-          "label": "Name",
-          "field":"name",
-          "type": "input",
-          "widget": "Input",
-          "placeholder": "Enter name",
-          "dataType":"string"
-        },
-        {
-          "label": "Trailer",
-          "field":"trailer",
-          "type": "input",
-          "widget": "Input",
-          "placeholder": "Enter trailer url",
-          "dataType":"string"
-        },
-    
-        {
-          "label": "Upload imgBanner",
-          "field":"imgBanner",
-          "type": "upload",
-          "widget": "UploadImage",
-          "placeholder": "",
-          "dataType":"string"
-    
-        },
-        {
-          "label": "Film duration",
-          "field":"duration",
-          "type": "time",
-          "widget": "DurationTime",
-          "placeholder": "",
-          "dataType":"json"
-    
-        },
-        {
-          "label": "Author",
-          "field":"author",
-          "type": "input",
-          "widget": "Input",
-          "placeholder": "Enter author name",
-          "dataType":"string"
-        },
-        {
-          "label": "Actors",
-          "field":"actors",
-          "type": "DynamicInputField",
-          "widget":"DynamicInputField",
-          "placeholder": "enter new actors name",
-          "dataType":"array"
-    
-        },
-        {
-          "label": "Start time",
-          "field":"startTime",
-          "type": "dateSelect",
-          "widget": "DateSelect",
-          "placeholder": "",
-          "dataType":"string"
-          
-        },
-        {
-          "label": "Language",
-          "dataType":"string",
-          "field":"language",
-          "type": "select",
-          "widget": "Select",
-          "placeholder": "Enter name",
-          "defaultOptions": [
-            {
-              "value": "english",
-              "label": "English"
-            },
-            {
-              "value": "vietnamese",
-              "label": "Vietnamese"
-            }
-          ]
-        },
-        {
-          "label": "Rated",
-          "dataType":"string",
-          "field":"rated",
-          "type": "input",
-          "placeholder": "Enter rated",
-          "widget":"Input"
-        },
-        {
-          "label": "Description",
-          "dataType":"string",
-          "field":"description",
-          "type": "textarea",
-          "widget":"TextArea",
-          "placeholder": "Enter description" 
-        }
-        
-      ],
-      "api":{
-        "create":"createFilmInformation",
-        "update":""
+  
+  "countryInformation": {
+    "schema": [
+      {
+        "label": "Name",
+        "field": "country_name",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Enter name country",
+        "dataType": "string"
       }
+    ],
+    "api": [
+      {
+        "create": "",
+        "update": ""
+      }
+    ]
   },
-  "filmManager": {
-    "schema":[
-        {
-          "label": "Film choose",
-          "dataType":"string",
-          "field":"filmInfor",
-          "type": "selectSearch",
-          "widget": "SelectSearch",
-          "placeholder": "Enter name",
-          "apiNameSetData":"getFilmInformation"
-        },
-        {
-          "label": "Watch time",
-          "dataType":"string",
-          "field":"watchTime",
-          "type": "select",
-          "widget": "Select",
-          "placeholder": "Enter name",
-          "defaultOptions": [
-            {
-              "value" : "7:00",
-              "label":"7:00"
-            },
-            {
-              "value" : "8:00",
-              "label":"8:00"
-            },
-            {
-              "value" : "9:00",
-              "label":"9:00"
-            },
-            {
-              "value" : "10:00",
-              "label":"10:00"
-            },
-            {
-              "value" : "11:00",
-              "label":"11:00"
-            },
-            {
-              "value" : "12:00",
-              "label":"12:00"
-            },
-            {
-              "value" : "13:00",
-              "label":"13:00"
-            },
-            {
-              "value" : "14:00",
-              "label":"14:00"
-            },
-            {
-              "value" : "15:00",
-              "label":"15:00"
-            },
-            {
-              "value" : "16:00",
-              "label":"16:00"
-            },
-            {
-              "value" : "17:00",
-              "label":"17:00"
-            },
-            {
-              "value" : "18:00",
-              "label":"18:00"
-            },
-            {
-              "value" : "19:00",
-              "label":"19:00"
-            },
-            {
-              "value" : "20:00",
-              "label":"20:00"
-            },
-            {
-              "value" : "21:00",
-              "label":"21:00"
-            },
-            {
-              "value" : "23:00",
-              "label":"23:00"
-            }
-            
-
-          ]
-        },
-        {
-          "label": "Watch date",
-          "dataType":"string",
-          "field":"watchDate",
-          "type": "dateSelect",
-          "widget": "DateSelect",
-          "placeholder": "Enter name"
-         
-          
-        },
-        {
-          "label": "Theater address",
-          "dataType":"string",
-          "field":"theaterAddress",
-          "type": "select",
-          "widget": "Select",
-          "placeholder": "Enter name",
-          "defaultOptions": [
-            {
-              "value": "ha noi",
-              "label": "Hà Nội"
-            },
-            {
-              "value": "ho chi minh",
-              "label": "Hồ Chí Minh"
-            },
-            {
-              "value":"nam dinh",
-              "label":"Nam Định"
-            }
-          ]
-        },
-        {
-          "label": "Theater number",
-          "dataType":"string",
-          "field":"theaterNumber",
-          "type": "select",
-          "widget": "Select",
-          "placeholder": "Enter theater number",
-          "defaultOptions": [
-            {
-              "value": "1",
-              "label": "1"
-            },
-            {
-              "value": "2",
-              "label": "2"
-            },
-            {
-              "value": "3",
-              "label": "3"
-            },
-            {
-              "value": "4",
-              "label": "4"
-            },
-            {
-              "value": "5",
-              "label": "5"
-            },
-            {
-              "value": "6",
-              "label": "6"
-            }
-          ]
-        }
-       
-       
-        
-      ],
-      "api":{
-        "create":"createNewDocFilmMamager",
-        "update":"updateFilmInformation"
+  "productCategoryInformation": {
+    "schema": [
+      {
+        "label": "Category name",
+        "field": "category_name",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Enter name category",
+        "dataType": "string"
+      },
+      {
+        "label": "Parent category id",
+        "field": "parent_category_id",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Please choose product category",
+        "dataType": "string"
       }
+    ],
+    "api": [
+      {
+        "create": "",
+        "update": ""
+      }
+    ]
   },
-  "foodInformations": {
-    "schema":[
-        {
-          "label": "Name",
-          "field":"name",
-          "type": "input",
-          "widget": "Input",
-          "placeholder": "Enter name food",
-          "dataType":"string"
-        },
-        {
-          "label": "Cost of food only number",
-          "field":"cost",
-          "type": "input",
-          "widget": "Input",
-          "placeholder": "Enter cost food as number",
-          "dataType":"string"
-        }
-    
-      ],
-      "api":{
-        "create":"createFoodInformation",
-        "update":""
+  "promotionInformation": {
+    "schema": [
+      {
+        "label": "Promotion name",
+        "field": "name",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Enter name promotion",
+        "dataType": "string"
+      },
+      {
+        "label": "Description",
+        "field": "description",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Enter description",
+        "dataType": "string"
+      },
+      {
+        "label": "Discount_rate",
+        "field": "discount_rate",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Enter discount rate",
+        "dataType": "string"
+      },
+      {
+        "label": "Start date",
+        "field": "start_date",
+        "type": "dateSelect",
+        "widget": "DateSelect",
+        "placeholder": "Enter start date",
+        "dataType": "string"
+      },
+      {
+        "label": "End date",
+        "field": "end_date",
+        "type": "dateSelect",
+        "widget": "DateSelect",
+        "placeholder": "Enter end date of promotion",
+        "dataType": "string"
       }
+    ],
+    "api": [
+      {
+        "create": "",
+        "update": ""
+      }
+    ]
+  },
+  "promotionCategoryInformation": {
+    "schema": [
+      {
+        "label": "Category id",
+        "field": "category_id",
+        "type": "selectSearch",
+        "widget": "SelectSearch",
+        "apiNameSetData": "getFilmInformation",
+        "placeholder": "Enter name category",
+        "dataType": "string"
+      },
+      {
+        "label": "Promotion id",
+        "field": "promotion_id",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Enter name promotion",
+        "dataType": "string"
+      }
+    ],
+    "api": [
+      {
+        "create": "",
+        "update": ""
+      }
+    ]
+  },
+  "productInformation": {
+    "schema": [
+      {
+        "label": "Category id",
+        "field": "category_id",
+        "type": "selectSearch",
+        "widget": "SelectSearch",
+        "apiNameSetData": "getFilmInformation",
+        "placeholder": "Enter name category",
+        "dataType": "string"
+      },
+      {
+        "label": "Product name",
+        "field": "name",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Enter name product",
+        "dataType": "string"
+      },
+      {
+        "label": "Product description",
+        "field": "description",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Description",
+        "dataType": "string"
+      },
+      {
+        "label": "Product image",
+        "field": "product_image",
+        "type": "upload",
+        "widget": "UploadImage",
+        "placeholder": "product image",
+        "dataType": "string"
+      }
+    ],
+    "api": [
+      {
+        "create": "",
+        "update": ""
+      }
+    ]
+  },
+  "variationInformation": {
+    "schema": [
+      {
+        "label": "Category id",
+        "field": "category_id",
+        "type": "selectSearch",
+        "widget": "SelectSearch",
+        "apiNameSetData": "getFilmInformation",
+        "placeholder": "Enter name category",
+        "dataType": "string"
+      },
+      {
+        "label": "Name",
+        "field": "name",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Enter name variation",
+        "dataType": "string"
+      }
+    ],
+    "api": [
+      {
+        "create": "",
+        "update": ""
+      }
+    ]
+  },
+  "variationOptionInformation": {
+    "schema": [
+      {
+        "label": "Variation id",
+        "field": "variation_id",
+        "type": "selectSearch",
+        "widget": "SelectSearch",
+        "apiNameSetData": "getFilmInformation",
+        "placeholder": "Enter variation id",
+        "dataType": "string"
+      },
+      {
+        "label": "Value",
+        "field": "value",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Enter value variation option",
+        "dataType": "string"
+      }
+    ],
+    "api": [
+      {
+        "create": "",
+        "update": ""
+      }
+    ]
+  },
+  "productItemsInformation": {
+    "schema": [
+      {
+        "label": "Product id",
+        "field": "product_id",
+        "type": "selectSearch",
+        "widget": "SelectSearch",
+        "apiNameSetData": "getFilmInformation",
+        "placeholder": "Enter product id",
+        "dataType": "string"
+      },
+      {
+        "label": "SKU(Stock Keeping Unit)",
+        "field": "SKU",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Enter SKU",
+        "dataType": "string"
+      },
+      {
+        "label": "Quantity in stock",
+        "field": "qty_in_stock",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Enter quantity in stock",
+        "dataType": "string"
+      },
+      {
+        "label": "Product image",
+        "field": "product_image",
+        "type": "upload",
+        "widget": "UploadImage",
+        "placeholder": "Enter product image",
+        "dataType": "string"
+      }
+    ],
+    "api": [
+      {
+        "create": "",
+        "update": ""
+      }
+    ]
+  },
+  "productConfigurationInformation": {
+    "schema": [
+      {
+        "label": "Product item id",
+        "field": "product_item_id",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Enter variation id",
+        "dataType": "string"
+      },
+      {
+        "label": "Variation option id",
+        "field": "variation_option_id",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Enter variation option id",
+        "dataType": "string"
+      }
+    ],
+    "api": [
+      {
+        "create": "",
+        "update": ""
+      }
+    ]
+  },
+  "paymentType": {
+    "schema": [
+      {
+        "label": "Value of payment type",
+        "field": "value",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Enter value of payment type",
+        "dataType": "string"
+      }
+    ],
+    "api": [
+      {
+        "create": "",
+        "update": ""
+      }
+    ]
   }
-
 }
