@@ -9,13 +9,9 @@ import {
 } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu, theme } from "antd";
 import { Route, Routes } from "react-router-dom";
-import FilmInformation from "../pages/FilmInformation/FilmInformation";
-import FilmManager from "../pages/FilmManager/FilmManager";
-import Tickets from "../pages/Tickets";
 import Bill from "../pages/Bill";
 import FeedBack from "../pages/FeedBack";
 import DashBoard from "../pages/DashBoard";
-import Food from "../pages/Food";
 const { Header, Content, Footer, Sider } = Layout;
 import { useLocation } from "react-router-dom";
 import Country from "../pages/Country/Country";

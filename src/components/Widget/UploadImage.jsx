@@ -2,6 +2,10 @@ import { Modal, Upload } from "antd";
 import React, { useState } from "react";
 import { PlusOutlined } from "@ant-design/icons";
 import axios from "axios";
+import { ref, uploadBytes , getDownloadURL } from "firebase/storage";
+import { v4 } from "uuid";
+import { storage } from "../../api/firebase";
+
 const getBase64 = (file) =>
   new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -9,8 +13,8 @@ const getBase64 = (file) =>
     reader.onload = () => resolve(reader.result);
     reader.onerror = (error) => reject(error);
   });
-const UploadImage = ({imgLink , setImgLink,count }) => {
-    //imgLink is state , setImgLink,count is number of image you want to upload
+const UploadImage = ({ imgLink, setImgLink, count }) => {
+  //imgLink is state , setImgLink,count is number of image you want to upload
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewImage, setPreviewImage] = useState("");
   const [previewTitle, setPreviewTitle] = useState("");
@@ -29,6 +33,9 @@ const UploadImage = ({imgLink , setImgLink,count }) => {
   const handleChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
   };
+
+
+
   const uploadButton = (
     <div>
       <PlusOutlined />
@@ -45,16 +52,18 @@ const UploadImage = ({imgLink , setImgLink,count }) => {
     <>
       <Upload
         customRequest={async (options) => {
+          console.log(options.file);
           const formData = new FormData();
           formData.append("file", options.file);
 
+          const imageRef = ref(storage, `image/${options.file.name}-${v4()}`);
+
           try {
-            const response = await axios.post(
-              "http://localhost:1337/UploadImage",
-              formData
-            );
-            setImgLink(response?.data)
-            options.onSuccess(response.data, options.file);
+          
+            let firebaseUpload = await uploadBytes(imageRef, options.file);
+            let uploadUrl = await getDownloadURL(firebaseUpload.ref)
+            setImgLink(uploadUrl);
+            options.onSuccess(uploadUrl, options.file);
           } catch (error) {
             options.onError(error);
           }
