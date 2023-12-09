@@ -19,6 +19,7 @@ const RenderForm = ({ formFormat, defaultData, mode, updateInfor }) => {
   const handleInputChange = (field, value) => {
     setFormData((prevFormData) => ({ ...prevFormData, [field]: value }));
   };
+  
   const handleCreateFilmInfor = async () => {
     try {
       toast.promise(api[formFormat.api.create]({ formData: formData }), {
@@ -168,7 +169,7 @@ const RenderForm = ({ formFormat, defaultData, mode, updateInfor }) => {
           <div
             onClick={() => {
               if (updateInfor) {
-                updateInfor({ filmId: formData.id, formData: formData });
+                updateInfor({ id: formData.id, formData: formData });
               } else {
                 console.error("Not have fuction matching");
               }

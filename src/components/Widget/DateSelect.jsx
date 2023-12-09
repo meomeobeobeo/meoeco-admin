@@ -21,8 +21,10 @@ const DateSelect = ({ value, onChange }) => {
   }, []);
 
   const handleDateChange = (date) => {
+    
     if (date) {
       const formattedDate = date.format(dateFormat);
+      
       onChange(formattedDate);
     } else {
       onChange(null);

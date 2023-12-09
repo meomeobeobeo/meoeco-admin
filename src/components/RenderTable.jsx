@@ -23,7 +23,7 @@ const RenderTable = ({ tableFormat }) => {
 
   const fetchData = async () => {
     let res = await api[tableFormat?.apiName?.getAll]();
-    let dataRes = res.data || [];
+    let dataRes = res.data?.metaData || [];
     const mappedData = dataRes.map((item) => {
       const mappedItem = { key: item?.id, id: item.id };
       tableFormat.columns.forEach((colFomat) => {
@@ -39,20 +39,27 @@ const RenderTable = ({ tableFormat }) => {
     setData(mappedData);
   };
 
-  const deleteInfor = async ({ filmId }) => {
+  const deleteInfor = async ({ id }) => {
     try {
-      await api[tableFormat?.apiName?.delete]({ id: filmId });
+      await api[tableFormat?.apiName?.delete]({ id: id });
       toast.success("Delete success 👌");
       fetchData();
     } catch (error) {
       toast.error("Have some error when delete 🤯");
     }
   };
-  const updateInfor = async ({ filmId, formData }) => {
+  const updateInfor = async ({ id, formData }) => {
+
+
+    const fixformData = formData
+    delete fixformData.key
+
+   
+
     try {
       await api[tableFormat?.apiName?.update]({
-        id: filmId,
-        formData: formData,
+        id: id,
+        formData: fixformData,
       });
       toast.success("update success 👌");
       fetchData();
@@ -147,7 +154,7 @@ const RenderTable = ({ tableFormat }) => {
       };
 
       const handleDeleteFilm = () => {
-        deleteInfor({ filmId: text.id });
+        deleteInfor({ id: text.id });
       };
 
       return (

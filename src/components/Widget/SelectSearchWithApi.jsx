@@ -7,21 +7,23 @@ export default function SelectSearchWithApi({ apiNameSetData, onChange }) {
   const [ariaFocusMessage, setAriaFocusMessage] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [options, setOptions] = useState([]);
+  
 
   useEffect(() => {
     if (!apiNameSetData) {
       setOptions([]);
     } else {
       let rs = api[apiNameSetData]();
+
+
       rs.then((data) => {
-        let result = data.data;
+        let result = data.data?.metaData;
+        // console.log(result)
         result = result.map((value) => {
+          // console.log(value.category_name);
           return {
-            value: {
-              id : value.id,
-              name : value.name
-            },
-            label: value.name,
+            value: value.id,
+            label: value.name || value.category_name || value.value ,
           };
         });
         setOptions(result);
@@ -55,9 +57,11 @@ export default function SelectSearchWithApi({ apiNameSetData, onChange }) {
 
   return (
     <div className="w-[100%]">
-      <label style={style.label} id="aria-label" htmlFor="aria-example-input">
-        
-      </label>
+      <label
+        style={style.label}
+        id="aria-label"
+        htmlFor="aria-example-input"
+      ></label>
 
       {!!ariaFocusMessage && !!isMenuOpen && (
         <blockquote style={style.blockquote}>"{ariaFocusMessage}"</blockquote>

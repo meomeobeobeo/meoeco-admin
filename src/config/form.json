@@ -1,5 +1,4 @@
 {
-  
   "countryInformation": {
     "schema": [
       {
@@ -11,12 +10,10 @@
         "dataType": "string"
       }
     ],
-    "api": [
-      {
-        "create": "",
-        "update": ""
-      }
-    ]
+    "api": {
+      "create": "createCountry",
+      "update": "updateCountry"
+    }
   },
   "productCategoryInformation": {
     "schema": [
@@ -37,12 +34,10 @@
         "dataType": "string"
       }
     ],
-    "api": [
-      {
-        "create": "",
-        "update": ""
-      }
-    ]
+    "api": {
+      "create": "createProductCategory",
+      "update": ""
+    }
   },
   "promotionInformation": {
     "schema": [
@@ -87,12 +82,10 @@
         "dataType": "string"
       }
     ],
-    "api": [
-      {
-        "create": "",
-        "update": ""
-      }
-    ]
+    "api": {
+      "create": "createPromotion",
+      "update": ""
+    }
   },
   "promotionCategoryInformation": {
     "schema": [
@@ -101,7 +94,7 @@
         "field": "category_id",
         "type": "selectSearch",
         "widget": "SelectSearch",
-        "apiNameSetData": "getFilmInformation",
+        "apiNameSetData": "getAllProductCategory",
         "placeholder": "Enter name category",
         "dataType": "string"
       },
@@ -114,12 +107,10 @@
         "dataType": "string"
       }
     ],
-    "api": [
-      {
-        "create": "",
-        "update": ""
-      }
-    ]
+    "api": {
+      "create": "createPromotionCategory",
+      "update": ""
+    }
   },
   "productInformation": {
     "schema": [
@@ -128,7 +119,7 @@
         "field": "category_id",
         "type": "selectSearch",
         "widget": "SelectSearch",
-        "apiNameSetData": "getFilmInformation",
+        "apiNameSetData": "getAllProductCategory",
         "placeholder": "Enter name category",
         "dataType": "string"
       },
@@ -157,12 +148,10 @@
         "dataType": "string"
       }
     ],
-    "api": [
-      {
-        "create": "",
-        "update": ""
-      }
-    ]
+    "api": {
+      "create": "createProduct",
+      "update": ""
+    }
   },
   "variationInformation": {
     "schema": [
@@ -171,7 +160,7 @@
         "field": "category_id",
         "type": "selectSearch",
         "widget": "SelectSearch",
-        "apiNameSetData": "getFilmInformation",
+        "apiNameSetData": "getAllProductCategory",
         "placeholder": "Enter name category",
         "dataType": "string"
       },
@@ -184,12 +173,10 @@
         "dataType": "string"
       }
     ],
-    "api": [
-      {
-        "create": "",
-        "update": ""
-      }
-    ]
+    "api": {
+      "create": "createVariation",
+      "update": ""
+    }
   },
   "variationOptionInformation": {
     "schema": [
@@ -213,7 +200,7 @@
     ],
     "api": [
       {
-        "create": "",
+        "create": "createVariationOption",
         "update": ""
       }
     ]
@@ -225,7 +212,7 @@
         "field": "product_id",
         "type": "selectSearch",
         "widget": "SelectSearch",
-        "apiNameSetData": "getFilmInformation",
+        "apiNameSetData": "getAllProduct",
         "placeholder": "Enter product id",
         "dataType": "string"
       },
@@ -254,12 +241,10 @@
         "dataType": "string"
       }
     ],
-    "api": [
-      {
-        "create": "",
-        "update": ""
-      }
-    ]
+    "api": {
+      "create": "createProductItems",
+      "update": ""
+    }
   },
   "productConfigurationInformation": {
     "schema": [
@@ -298,11 +283,9 @@
         "dataType": "string"
       }
     ],
-    "api": [
-      {
-        "create": "",
-        "update": ""
-      }
-    ]
+    "api": {
+      "create": "createPaymentType",
+      "update": ""
+    }
   }
 }

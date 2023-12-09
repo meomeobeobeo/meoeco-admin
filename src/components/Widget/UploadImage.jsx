@@ -52,14 +52,14 @@ const UploadImage = ({ imgLink, setImgLink, count }) => {
     <>
       <Upload
         customRequest={async (options) => {
-          console.log(options.file);
+          
           const formData = new FormData();
           formData.append("file", options.file);
 
           const imageRef = ref(storage, `image/${options.file.name}-${v4()}`);
 
           try {
-          
+            
             let firebaseUpload = await uploadBytes(imageRef, options.file);
             let uploadUrl = await getDownloadURL(firebaseUpload.ref)
             setImgLink(uploadUrl);

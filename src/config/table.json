@@ -9,10 +9,10 @@
       }
     ],
     "apiName": {
-      "getAll": "getFoodInformation",
+      "getAll": "getAllCountry",
       "getDetails": "",
-      "delete": "deleteFoodInformation",
-      "update": "updateFoodInformation"
+      "delete": "deleteCountry",
+      "update": "updateCountry"
     },
     "formFormatName": "countryInformation"
   },
@@ -30,12 +30,12 @@
       }
     ],
     "apiName": {
-      "getAll": "getFoodInformation",
+      "getAll": "getAllProductCategory",
       "getDetails": "",
-      "delete": "deleteFoodInformation",
-      "update": "updateFoodInformation"
+      "delete": "deleteProductCategory",
+      "update": "updateProductCategory"
     },
-    "formFormatName": "countryInformation"
+    "formFormatName": "productCategoryInformation"
   },
   "promotionInformation": {
     "columns": [
@@ -66,10 +66,10 @@
       }
     ],
     "apiName": {
-      "getAll": "getFoodInformation",
+      "getAll": "getAllPromotion",
       "getDetails": "",
-      "delete": "deleteFoodInformation",
-      "update": "updateFoodInformation"
+      "delete": "deletePromotion",
+      "update": "updatePromotion"
     },
     "formFormatName": "promotionInformation"
   },
@@ -83,14 +83,14 @@
       {
         "label": "Category id",
         "field": "category_id",
-        "type": "object"
+        "type": "string"
       }
     ],
     "apiName": {
-      "getAll": "getFoodInformation",
+      "getAll": "getAllPromotionCategory",
       "getDetails": "",
-      "delete": "deleteFoodInformation",
-      "update": "updateFoodInformation"
+      "delete": "deletePromotionCategory",
+      "update": "updatePromotionCategory"
     },
     "formFormatName": "promotionCategoryInformation"
   },
@@ -99,7 +99,7 @@
       {
         "label": "Category id",
         "field": "category_id",
-        "type": "object"
+        "type": "string"
       },
       {
         "label": "Name product",
@@ -118,19 +118,19 @@
       }
     ],
     "apiName": {
-      "getAll": "getFoodInformation",
+      "getAll": "getAllProduct",
       "getDetails": "",
-      "delete": "deleteFoodInformation",
-      "update": "updateFoodInformation"
+      "delete": "deleteProduct",
+      "update": "updateProduct"
     },
-    "formFormatName": "promotionCategoryInformation"
+    "formFormatName": "productInformation"
   },
   "variationInformation": {
     "columns": [
       {
         "label": "Category id",
         "field": "category_id",
-        "type": "object"
+        "type": "string"
       },
       {
         "label": "Name",
@@ -139,10 +139,10 @@
       }
     ],
     "apiName": {
-      "getAll": "getFoodInformation",
+      "getAll": "getAllVariation",
       "getDetails": "",
-      "delete": "deleteFoodInformation",
-      "update": "updateFoodInformation"
+      "delete": "deleteVariation",
+      "update": "updateVariation"
     },
     "formFormatName": "variationInformation"
   },
@@ -151,7 +151,7 @@
       {
         "label": "Varation id",
         "field": "variation_id",
-        "type": "object"
+        "type": "string"
       },
       {
         "label": "Value",
@@ -160,10 +160,10 @@
       }
     ],
     "apiName": {
-      "getAll": "getFoodInformation",
+      "getAll": "getAllVariationOption",
       "getDetails": "",
-      "delete": "deleteFoodInformation",
-      "update": "updateFoodInformation"
+      "delete": "deleteVariationOption",
+      "update": "updateVariationOption"
     },
     "formFormatName": "variationOptionInformation"
   },
@@ -192,9 +192,9 @@
     
     ],
     "apiName": {
-      "getAll": "getFoodInformation",
+      "getAll": "getAllProductItems",
       "getDetails": "",
-      "delete": "deleteFoodInformation",
+      "delete": "deleteProductItems",
       "update": "updateFoodInformation"
     },
     "formFormatName": "productItemsInformation"
@@ -230,10 +230,10 @@
         }
       ],
       "apiName": {
-        "getAll": "getFoodInformation",
+        "getAll": "getAllPaymentType",
         "getDetails": "",
-        "delete": "deleteFoodInformation",
-        "update": "updateFoodInformation"
+        "delete": "deletePaymentType",
+        "update": "updatePaymentType"
       },
       "formFormatName": "paymentType"
   }
