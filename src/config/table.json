@@ -1,5 +1,4 @@
 {
-  
   "CountryInformation": {
     "columns": [
       {
@@ -175,6 +174,11 @@
         "type": "string"
       },
       {
+        "label": "Name",
+        "field": "name",
+        "type": "string"
+      },
+      {
         "label": "SKU",
         "field": "SKU",
         "type": "string"
@@ -188,53 +192,88 @@
         "label": "Product image",
         "field": "product_image",
         "type": "string"
+      },
+      {
+        "label": "Price(VND)",
+        "field": "price",
+        "type": "string"
       }
-    
     ],
     "apiName": {
       "getAll": "getAllProductItems",
       "getDetails": "",
       "delete": "deleteProductItems",
-      "update": "updateFoodInformation"
+      "update": "updateProductItems"
     },
     "formFormatName": "productItemsInformation"
   },
-  "productConfigurationInformation":{
+  "productConfigurationInformation": {
     "columns": [
-        {
-          "label": "Product item id",
-          "field": "product_item_id",
-          "type": "string"
-        },
-        {
-          "label": "Variation option id",
-          "field": "variation_option_id",
-          "type": "string"
-        }
-      ],
-      "apiName": {
-        "getAll": "getFoodInformation",
-        "getDetails": "",
-        "delete": "deleteFoodInformation",
-        "update": "updateFoodInformation"
+      {
+        "label": "Product item id",
+        "field": "product_item_id",
+        "type": "string"
       },
-      "formFormatName": "productConfigurationInformation"
-    
+      {
+        "label": "Variation option id",
+        "field": "variation_option_id",
+        "type": "string"
+      }
+    ],
+    "apiName": {
+      "getAll": "getAllProductConfiguration",
+      "getDetails": "",
+      "delete": "deleteProductConfiguration",
+      "update": "updateProductConfiguration"
+    },
+    "formFormatName": "productConfigurationInformation"
   },
-  "paymentType" : {
+  "outStandingProducts": {
     "columns": [
-        {
-          "label": "Payment type",
-          "field": "value",
-          "type": "string"
-        }
-      ],
-      "apiName": {
-        "getAll": "getAllPaymentType",
-        "getDetails": "",
-        "delete": "deletePaymentType",
-        "update": "updatePaymentType"
-      },
-      "formFormatName": "paymentType"
+      {
+        "label": "Product item id",
+        "field": "product_item_id",
+        "type": "string"
+      }
+    ],
+    "apiName": {
+      "getAll": "getAllOutStandingProducts",
+      "getDetails": "",
+      "delete": "deleteOutStandingProducts",
+      "update": "updateOutStandingProducts"
+    },
+    "formFormatName": "outStandingProducts"
+  },
+  "sellingProducts": {
+    "columns": [
+      {
+        "label": "Product item id",
+        "field": "product_item_id",
+        "type": "string"
+      }
+    ],
+    "apiName": {
+      "getAll": "getAllSellingProducts",
+      "getDetails": "",
+      "delete": "deleteSellingProducts",
+      "update": "updateSellingProducts"
+    },
+    "formFormatName": "sellingProducts"
+  },
+  "paymentType": {
+    "columns": [
+      {
+        "label": "Payment type",
+        "field": "value",
+        "type": "string"
+      }
+    ],
+    "apiName": {
+      "getAll": "getAllPaymentType",
+      "getDetails": "",
+      "delete": "deletePaymentType",
+      "update": "updatePaymentType"
+    },
+    "formFormatName": "paymentType"
   }
 }

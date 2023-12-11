@@ -31,6 +31,12 @@ const itemNavs = [
   getItem("Dashboard", "/dashboard", <MdDashboard />),
   getItem("Country", "/country", <FcFeedback />),
 
+  getItem("Setting DATA MOBILE APP", "settingData", <DesktopOutlined />, [
+    getItem("Out standing product", "/outstanding-products", <FcFeedback />),
+    getItem("Selling product", "/selling-products", <FcFeedback />),
+   
+  ]),
+
   getItem("Product manager", "sub1", <DesktopOutlined />, [
     getItem("Product category", "/product-category", <FcFeedback />),
     getItem("Products", "/products", <FcFeedback />),
@@ -45,6 +51,7 @@ const itemNavs = [
     getItem("Promotion category", "/promotion-category", <FcFeedback />),
   ]),
   getItem("Payment type", "/payment-type", <FcFeedback />),
+  getItem("Product configuration", "/product-configuration", <FcFeedback />),
 ];
 
 const TheSider = () => {

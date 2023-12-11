@@ -25,7 +25,7 @@ const RenderTable = ({ tableFormat }) => {
     let res = await api[tableFormat?.apiName?.getAll]();
     let dataRes = res.data?.metaData || [];
     const mappedData = dataRes.map((item) => {
-      const mappedItem = { key: item?.id, id: item.id };
+      const mappedItem = { key: item?.id || item?._id, id: item.id };
       tableFormat.columns.forEach((colFomat) => {
         const { label, field, type } = colFomat;
 

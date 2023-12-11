@@ -148,6 +148,49 @@ export const deleteVariationOption = ({ id }) => {
   return API.delete(`/admin/variation-option/${id}`);
 };
 
+// out standing product
+
+export const createOutStandingProducts = ({ formData }) => {
+  return API.post("/admin/outstanding-product", formData);
+};
+export const getAllOutStandingProducts = () => {
+  return API.get("/admin/outstanding-product");
+};
+export const updateOutStandingProducts = ({ id, formData }) => {
+  return API.patch(`/admin/outstanding-product/${id}`, formData);
+};
+export const deleteOutStandingProducts = ({ id }) => {
+  return API.delete(`/admin/outstanding-product${id}`);
+};
+
+// selling product
+
+export const createSellingProducts = ({ formData }) => {
+  return API.post("/admin/selling-product", formData);
+};
+export const getAllSellingProducts = () => {
+  return API.get("/admin/selling-product");
+};
+export const updateSellingProducts = ({ id, formData }) => {
+  return API.patch(`/admin/selling-product/${id}`, formData);
+};
+export const deleteSellingProducts = ({ id }) => {
+  return API.delete(`/admin/selling-product${id}`);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export const createFilmInformation = ({ formData }) => {
   return API.post("/blue/films", formData);
 };

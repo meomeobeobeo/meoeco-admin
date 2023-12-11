@@ -185,7 +185,7 @@
         "field": "variation_id",
         "type": "selectSearch",
         "widget": "SelectSearch",
-        "apiNameSetData": "getFilmInformation",
+        "apiNameSetData": "getAllVariation",
         "placeholder": "Enter variation id",
         "dataType": "string"
       },
@@ -198,12 +198,10 @@
         "dataType": "string"
       }
     ],
-    "api": [
-      {
-        "create": "createVariationOption",
-        "update": ""
-      }
-    ]
+    "api": {
+      "create": "createVariationOption",
+      "update": ""
+    }
   },
   "productItemsInformation": {
     "schema": [
@@ -214,6 +212,14 @@
         "widget": "SelectSearch",
         "apiNameSetData": "getAllProduct",
         "placeholder": "Enter product id",
+        "dataType": "string"
+      },
+      {
+        "label": "Name product items",
+        "field": "name",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Enter name of product items",
         "dataType": "string"
       },
       {
@@ -239,6 +245,14 @@
         "widget": "UploadImage",
         "placeholder": "Enter product image",
         "dataType": "string"
+      },
+      {
+        "label": "Price(VND)",
+        "field": "price",
+        "type": "input",
+        "widget": "Input",
+        "placeholder": "Enter price of product",
+        "dataType": "string"
       }
     ],
     "api": {
@@ -251,26 +265,26 @@
       {
         "label": "Product item id",
         "field": "product_item_id",
-        "type": "input",
-        "widget": "Input",
+        "type": "selectSearch",
+        "widget": "SelectSearch",
+        "apiNameSetData": "getAllProductItems",
         "placeholder": "Enter variation id",
         "dataType": "string"
       },
       {
         "label": "Variation option id",
         "field": "variation_option_id",
-        "type": "input",
-        "widget": "Input",
+        "type": "selectSearch",
+        "widget": "SelectSearch",
+        "apiNameSetData": "getAllVariationOption",
         "placeholder": "Enter variation option id",
         "dataType": "string"
       }
     ],
-    "api": [
-      {
-        "create": "",
-        "update": ""
-      }
-    ]
+    "api": {
+      "create": "createProductConfiguration",
+      "update": ""
+    }
   },
   "paymentType": {
     "schema": [
@@ -285,6 +299,40 @@
     ],
     "api": {
       "create": "createPaymentType",
+      "update": ""
+    }
+  },
+  "outStandingProducts": {
+    "schema": [
+      {
+        "label": "Product item id",
+        "field": "product_item_id",
+        "type": "selectSearch",
+        "widget": "SelectSearch",
+        "apiNameSetData": "getAllProductItems",
+        "placeholder": "Enter variation id",
+        "dataType": "string"
+      }
+    ],
+    "api": {
+      "create": "createOutStandingProducts",
+      "update": ""
+    }
+  },
+  "sellingProducts": {
+    "schema": [
+      {
+        "label": "Product item id",
+        "field": "product_item_id",
+        "type": "selectSearch",
+        "widget": "SelectSearch",
+        "apiNameSetData": "getAllProductItems",
+        "placeholder": "Enter variation id",
+        "dataType": "string"
+      }
+    ],
+    "api": {
+      "create": "createSellingProducts",
       "update": ""
     }
   }

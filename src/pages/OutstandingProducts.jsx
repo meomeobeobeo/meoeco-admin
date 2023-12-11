@@ -5,7 +5,8 @@ import TABLES from "../config/table.json";
 import { Tabs } from "antd";
 import TabPane from "antd/es/tabs/TabPane";
 import RenderTable from "../components/RenderTable";
-const ProductConfiguration = () => {
+
+const OutstandingProducts = () => {
   const [activeTab, setActiveTab] = useState("create-infor");
 
   const handleTabChange = (key) => {
@@ -14,16 +15,19 @@ const ProductConfiguration = () => {
   return (
     <div className="w-full">
       <Tabs className="w-full" activeKey={activeTab} onChange={handleTabChange}>
-        <TabPane tab="Create product configuration" key="create-infor">
-          <RenderForm mode={"create"} formFormat={FORMS.productConfigurationInformation} />
+        <TabPane tab="Create out standing product ( product items)" key="create-infor">
+          <RenderForm
+            mode={"create"}
+            formFormat={FORMS.outStandingProducts}
+          />
         </TabPane>
-        <TabPane tab="Table product configuration list" key="table-infor">
+        <TabPane tab="Table variation option list" key="table-infor">
           {/* <RenderTable  tableFormat={TABLES.test} /> */}
-          <RenderTable tableFormat={TABLES.productConfigurationInformation} />
+          <RenderTable tableFormat={TABLES.outStandingProducts} />
         </TabPane>
       </Tabs>
     </div>
   );
 };
 
-export default ProductConfiguration;
+export default OutstandingProducts;

@@ -23,6 +23,9 @@ import VariationOption from "../pages/VariationOption";
 import ProductItems from "../pages/ProductItems";
 import Products from "../pages/Product";
 import PaymentType from "../pages/PaymentType";
+import ProductConfiguration from "../pages/ProductConfiguration";
+import OutstandingProducts from "../pages/OutstandingProducts";
+import SellingProducts from "../pages/SellingProducts";
 
 const TheContent = () => {
   const {
@@ -74,6 +77,12 @@ const TheContent = () => {
             <Route path="/variation-option" element={<VariationOption />} />
             <Route path="/product-items" element={<ProductItems />} />
             <Route path="/payment-type" element={<PaymentType />} />
+            <Route path="/product-configuration" element={<ProductConfiguration />} />
+            <Route path="/outstanding-products" element={<OutstandingProducts />} />
+            <Route path="/selling-products" element={<SellingProducts />} />
+
+
+
           </Routes>
         </div>
       </Content>
